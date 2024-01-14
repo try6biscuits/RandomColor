@@ -18,20 +18,30 @@ let hexNumbers = [
   ];
 
   function changeColor() {
-    let hexColorCode = "";
+    let hexBackgroundColor = "";
+    let hexButtonColor = "";
+  
+    // Generate a random hex color code for the background
     for (let i = 0; i < 6; i++) {
       let randomIndex = Math.floor(Math.random() * hexNumbers.length);
-      hexColorCode += hexNumbers[randomIndex];
+      hexBackgroundColor += hexNumbers[randomIndex];
     }
-    document.body.style.backgroundColor = "#" + hexColorCode;
-    btn.addEventListener('click', function onClick() {
-      btn.style.backgroundColor = "#" + hexColorCode;;
-      btn.style.color = 'white';
-    });
+  
+    // Generate a separate random hex color code for the button
+    for (let i = 0; i < 6; i++) {
+      let randomIndex = Math.floor(Math.random() * hexNumbers.length);
+      hexButtonColor += hexNumbers[randomIndex];
+    }
+    document.body.style.backgroundColor = "#" + hexBackgroundColor;
+
+    // Set the button color
+    btn.style.backgroundColor = "#" + hexButtonColor;
+    btn.style.color = 'white';
   }
+  
 
   document.getElementById("btn").addEventListener("click", changeColor);
-  const btn = document.getElementById('btn');
+
 
 
   

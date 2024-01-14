@@ -24,8 +24,14 @@ let hexNumbers = [
       hexColorCode += hexNumbers[randomIndex];
     }
     document.body.style.backgroundColor = "#" + hexColorCode;
+    btn.addEventListener('click', function onClick() {
+      btn.style.backgroundColor = "#" + hexColorCode;;
+      btn.style.color = 'white';
+    });
   }
 
   document.getElementById("btn").addEventListener("click", changeColor);
-  
+  const btn = document.getElementById('btn');
+
+
   
